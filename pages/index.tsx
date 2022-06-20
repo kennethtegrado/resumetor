@@ -3,7 +3,7 @@ import Head from 'next/head';
 import styles from '@styles/page/Home.module.scss';
 
 // React Hook Form
-import { Field, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import type { SubmitHandler } from 'react-hook-form';
 
 const Home: NextPage = () => {
@@ -31,7 +31,13 @@ const Home: NextPage = () => {
 
             <main className={styles.main}>
                 <h1>Hello World</h1>
-                <form onSubmit={handleSubmit(onSubmit)}></form>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <input {...register('name')} />
+                    <br />
+                    <input {...register('email')} />
+                    <br />
+                    <button type="submit">Hello World</button>
+                </form>
             </main>
         </>
     );

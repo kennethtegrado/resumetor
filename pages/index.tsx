@@ -47,4 +47,5 @@ export default Home;
 
 type FieldValues = {
     name: string;
+    email: string;
 };

@@ -39,18 +39,31 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className={styles.main}>
+            <main>
                 <div>
+                    <hr />
                     <h1>Personal Information</h1>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <input type="text" />
-                        {fields.map((field, index) => (
-                            <input
-                                key={field.id}
-                                defaultValue={field.name}
-                                {...register(`field.${index}.value`)}
-                            />
-                        ))}
+                        <ul>
+                            <li>
+                                <input type="text" {...register('name')} />
+                            </li>
+                            <li>
+                                <input type="text" {...register('address')} />
+                            </li>
+                            <li>
+                                <input type="text" {...register('email')} />
+                            </li>
+                            {fields.map((field: any, index) => (
+                                <li key={field.id}>
+                                    <input
+                                        defaultValue={field.name}
+                                        {...register(`field.${index}.value`)}
+                                    />
+                                </li>
+                            ))}
+                        </ul>
+
                         <button>Add</button>
                     </form>
                 </div>
@@ -65,3 +78,8 @@ export default Home;
 //     name: string;
 //     email: string;
 // };
+
+interface Field {
+    id: string;
+    name: string;
+}

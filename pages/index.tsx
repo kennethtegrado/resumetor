@@ -46,13 +46,28 @@ const Home: NextPage = () => {
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <ul>
                             <li>
+                                <label htmlFor="name">
+                                    <h4>Name</h4>
+                                </label>
                                 <input type="text" {...register('name')} />
                             </li>
                             <li>
+                                <label htmlFor="name">
+                                    <h4>Email</h4>
+                                </label>
+                                <input type="text" {...register('email')} />
+                            </li>
+                            <li>
+                                <label htmlFor="name">
+                                    <h4>Address</h4>
+                                </label>
                                 <input type="text" {...register('address')} />
                             </li>
                             <li>
-                                <input type="text" {...register('email')} />
+                                <label htmlFor="name">
+                                    <h4>Phone Number</h4>
+                                </label>
+                                <input type="text" {...register('address')} />
                             </li>
                             {fields.map((field: any, index) => (
                                 <li key={field.id}>

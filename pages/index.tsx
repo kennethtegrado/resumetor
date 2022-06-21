@@ -3,18 +3,28 @@ import Head from 'next/head';
 import styles from '@styles/page/Home.module.scss';
 
 // React Hook Form
-import { useForm } from 'react-hook-form';
+import { useForm, useFieldArray } from 'react-hook-form';
 import type { SubmitHandler } from 'react-hook-form';
+
+const defaultValues = {
+    sections: [
+        { name: 'Personal Information' },
+        { name: 'Working Experience' },
+    ],
+};
 
 const Home: NextPage = () => {
     // Destructure Hook Forms
     const {
         register,
         handleSubmit,
+        control,
         formState: { errors },
-    } = useForm<FieldValues>();
+    } = useForm<any>({ defaultValues });
+    const { fields, append, prepend, remove, swap, move, insert } =
+        useFieldArray({ control, name: 'sections' });
 
-    const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    const onSubmit: SubmitHandler<any> = (data) => {
         console.log(data);
     };
 
@@ -30,14 +40,20 @@ const Home: NextPage = () => {
             </Head>
 
             <main className={styles.main}>
-                <h1>Hello World</h1>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <input {...register('name')} />
-                    <br />
-                    <input {...register('email')} />
-                    <br />
-                    <button type="submit">Hello World</button>
-                </form>
+                <div>
+                    <h1>Personal Information</h1>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <input type="text" />
+                        {fields.map((field, index) => (
+                            <input
+                                key={field.id}
+                                defaultValue={field.name}
+                                {...register(`field.${index}.value`)}
+                            />
+                        ))}
+                        <button>Add</button>
+                    </form>
+                </div>
             </main>
         </>
     );
@@ -45,7 +61,7 @@ const Home: NextPage = () => {
 
 export default Home;
 
-type FieldValues = {
-    name: string;
-    email: string;
-};
+// type FieldValues = {
+//     name: string;
+//     email: string;
+// };

@@ -38,7 +38,7 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className="main__container">
+            <main className="home__container">
                 <hr />
                 <h1>Personal Information</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>

@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import styles from '@styles/page/Home.module.scss';
 
 // React Hook Form
 import { useForm, useFieldArray } from 'react-hook-form';
@@ -39,49 +38,47 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main>
-                <div>
-                    <hr />
-                    <h1>Personal Information</h1>
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <ul>
-                            <li>
-                                <label htmlFor="name">
-                                    <h4>Name</h4>
-                                </label>
-                                <input type="text" {...register('name')} />
+            <main className="main__container">
+                <hr />
+                <h1>Personal Information</h1>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <ul>
+                        <li>
+                            <label htmlFor="name">
+                                <h4>Name</h4>
+                            </label>
+                            <input type="text" {...register('name')} />
+                        </li>
+                        <li>
+                            <label htmlFor="name">
+                                <h4>Email</h4>
+                            </label>
+                            <input type="text" {...register('email')} />
+                        </li>
+                        <li>
+                            <label htmlFor="name">
+                                <h4>Address</h4>
+                            </label>
+                            <input type="text" {...register('address')} />
+                        </li>
+                        <li>
+                            <label htmlFor="name">
+                                <h4>Phone Number</h4>
+                            </label>
+                            <input type="text" {...register('address')} />
+                        </li>
+                        {fields.map((field: any, index) => (
+                            <li key={field.id}>
+                                <input
+                                    defaultValue={field.name}
+                                    {...register(`field.${index}.value`)}
+                                />
                             </li>
-                            <li>
-                                <label htmlFor="name">
-                                    <h4>Email</h4>
-                                </label>
-                                <input type="text" {...register('email')} />
-                            </li>
-                            <li>
-                                <label htmlFor="name">
-                                    <h4>Address</h4>
-                                </label>
-                                <input type="text" {...register('address')} />
-                            </li>
-                            <li>
-                                <label htmlFor="name">
-                                    <h4>Phone Number</h4>
-                                </label>
-                                <input type="text" {...register('address')} />
-                            </li>
-                            {fields.map((field: any, index) => (
-                                <li key={field.id}>
-                                    <input
-                                        defaultValue={field.name}
-                                        {...register(`field.${index}.value`)}
-                                    />
-                                </li>
-                            ))}
-                        </ul>
+                        ))}
+                    </ul>
 
-                        <button>Add</button>
-                    </form>
-                </div>
+                    <button>Add Information</button>
+                </form>
             </main>
         </>
     );

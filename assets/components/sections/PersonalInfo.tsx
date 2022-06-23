@@ -2,7 +2,7 @@ import type { FunctionComponent } from 'react';
 
 // Component Import
 import Section from '@components/Section';
-import { FormInput } from '@components/ui';
+import { Button, FormInput } from '@components/ui';
 
 // React Hook Form
 import { FormProvider, useForm } from 'react-hook-form';
@@ -23,6 +23,7 @@ const PersonalInfo: FunctionComponent = () => {
                         props={{ type: 'email' }}
                     />
                     <FormInput label="Location" name="address" />
+                    <Button>Save</Button>
                 </form>
             </FormProvider>
         </Section>

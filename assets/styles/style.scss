@@ -1,5 +1,6 @@
 @use './base';
 @use './pages';
+@import 'utils/variables';
 
 html {
     font-size: 16px;
@@ -8,4 +9,5 @@ html {
 body {
     padding: 2rem;
     margin: 0;
+    background-color: $primary-background;
 }

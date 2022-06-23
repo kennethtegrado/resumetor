@@ -38,46 +38,7 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className="home__container">
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <ul>
-                        <li>
-                            <label htmlFor="name">
-                                <h4>Name</h4>
-                            </label>
-                            <input type="text" {...register('name')} />
-                        </li>
-                        <li>
-                            <label htmlFor="name">
-                                <h4>Email</h4>
-                            </label>
-                            <input type="text" {...register('email')} />
-                        </li>
-                        <li>
-                            <label htmlFor="name">
-                                <h4>Address</h4>
-                            </label>
-                            <input type="text" {...register('address')} />
-                        </li>
-                        <li>
-                            <label htmlFor="name">
-                                <h4>Phone Number</h4>
-                            </label>
-                            <input type="text" {...register('address')} />
-                        </li>
-                        {fields.map((field: any, index) => (
-                            <li key={field.id}>
-                                <input
-                                    defaultValue={field.name}
-                                    {...register(`field.${index}.value`)}
-                                />
-                            </li>
-                        ))}
-                    </ul>
-
-                    <button>Add Information</button>
-                </form>
-            </main>
+            <main></main>
         </>
     );
 };

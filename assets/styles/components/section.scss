@@ -1,0 +1,8 @@
+@import '../utils/variables';
+
+.section__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: $section-background;
+    padding: 2rem;
+}

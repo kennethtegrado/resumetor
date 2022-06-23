@@ -1,10 +1,7 @@
 @use './base';
 @use './pages';
+@use './components';
 @import 'utils/variables';
-
-html {
-    font-size: 16px;
-}
 
 body {
     padding: 2rem;

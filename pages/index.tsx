@@ -4,6 +4,7 @@ import Head from 'next/head';
 // React Hook Form
 import { useForm, useFieldArray } from 'react-hook-form';
 import type { SubmitHandler } from 'react-hook-form';
+import Section from '@components/Section';
 
 const defaultValues = {
     sections: [
@@ -38,7 +39,9 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main></main>
+            <main>
+                <Section title="Personal Information"></Section>
+            </main>
         </>
     );
 };

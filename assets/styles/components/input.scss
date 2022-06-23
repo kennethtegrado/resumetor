@@ -1,7 +1,7 @@
 @use '../utils' as *;
 
 .input-component {
-    outline: none;
+    outline: 3px solid rgba($primary, 0);
     color: $secondary;
     padding: 0.5rem;
     border: 1px solid $secondary-lighter;
@@ -25,6 +25,17 @@
     &__helper {
         color: $error;
         margin-top: 0.5rem;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 30px $section-background inset !important;
+    }
+
+    &:-webkit-autofill {
+        -webkit-text-fill-color: $secondary !important;
     }
 
     @include mobile {

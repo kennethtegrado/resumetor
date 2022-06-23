@@ -1,10 +1,22 @@
-// Colors
+///////// COLORS
+/// Primary
 $primary: #525dff;
+$primary-violet: lighten($primary, 10%);
+$primary-dark: lighten($primary, 3%);
 $primary-background: rgba(#525dff, 5%);
+
+/// Secondary
 $section-background: white;
 $secondary: #29292f;
+$secondary-light: lighten($secondary, 20%);
+$secondary-lighter: lighten($secondary, 70%);
 $icon-color: lighten($secondary, 75%);
 $shadow-color: darken($primary, 20%);
 
+/// Accents
+$error: #ee2b2b;
+$sucess: #81e052;
+$warning: #ffbe4d;
+
 // Animation
-$bg-hover: background-color 0.5s;
+$animate-hover: all 0.5s;

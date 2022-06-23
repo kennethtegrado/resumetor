@@ -3,17 +3,13 @@ import type { FunctionComponent } from 'react';
 // Icon Import
 import { HiPencil } from 'react-icons/hi';
 
-const Section: FunctionComponent<SectionProps> = ({ title }) => {
+// Component Import
+import { SectionTitle } from '@components/ui';
+
+const Section: FunctionComponent<SectionProps> = ({ title, editableTitle }) => {
     return (
         <section className="section__container">
-            <div>
-                <h4 className="section__title">
-                    {title}
-                    <span className="section__edit-title">
-                        <HiPencil />
-                    </span>
-                </h4>
-            </div>
+            <SectionTitle title={title} editableTitle={editableTitle} />
         </section>
     );
 };
@@ -22,4 +18,5 @@ export default Section;
 
 interface SectionProps {
     title: string;
+    editableTitle?: boolean;
 }

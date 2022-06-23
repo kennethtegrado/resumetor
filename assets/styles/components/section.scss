@@ -1,36 +1,74 @@
 @import '../utils/variables';
 
-.section__container {
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: $section-background;
-    padding: 2rem 3rem;
-    border-radius: 1rem;
-    box-shadow: 0 5px 15px rgba($shadow-color, 0.1);
-}
+.section {
+    &__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background-color: $section-background;
+        padding: 3rem;
+        border-radius: 5px;
+        box-shadow: 0 5px 10px rgba($shadow-color, 0.05);
+    }
 
-.section__title {
-    font-weight: 800;
-    color: $secondary;
-    margin-bottom: 1rem;
-    display: inline-block;
-    position: relative;
-}
+    &__title {
+        font-weight: 800;
+        color: $secondary;
+        margin-bottom: 1rem;
+        display: inline-block;
+        position: relative;
+    }
 
-.section__edit-title {
-    position: absolute;
-    font-size: small;
-    right: -3rem;
-    top: 0rem;
-    background-color: $primary;
-    color: $icon-color;
-    padding: 0.5rem;
-    border-radius: 0.2rem;
-    cursor: pointer;
+    &__edit-title {
+        position: absolute;
+        font-size: small;
+        right: -3rem;
+        top: -1rem;
+        width: 1.8rem;
+        height: 1.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $primary;
+        color: $icon-color;
+        padding: 0.5rem;
+        border-radius: 0.2rem;
+        cursor: pointer;
 
-    transition: $bg-hover;
+        transition: $animate-hover;
 
-    &:hover {
-        background-color: darken($primary, 5%);
+        &:hover {
+            background-color: $primary-dark;
+        }
+
+        &-icon {
+            display: block;
+        }
+    }
+
+    &__change-title {
+        outline: none;
+        color: $secondary;
+        padding: 0.5rem;
+        border: 1px solid $secondary-lighter;
+        width: 50%;
+        border-radius: 5px;
+        transition: $animate-hover;
+
+        &:focus,
+        &:active {
+            border-color: $primary-violet;
+            outline: 3px solid rgba($primary, 0.1);
+        }
+
+        &-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: lighten($secondary, 10%);
+        }
+
+        &-error {
+            color: $error;
+            margin-top: 0.5rem;
+        }
     }
 }

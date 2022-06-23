@@ -1,33 +1,10 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-// React Hook Form
-import { useForm, useFieldArray } from 'react-hook-form';
-import type { SubmitHandler } from 'react-hook-form';
+// Components import
 import Section from '@components/Section';
 
-const defaultValues = {
-    sections: [
-        { name: 'Personal Information' },
-        { name: 'Working Experience' },
-    ],
-};
-
 const Home: NextPage = () => {
-    // Destructure Hook Forms
-    const {
-        register,
-        handleSubmit,
-        control,
-        formState: { errors },
-    } = useForm<any>({ defaultValues });
-    const { fields, append, prepend, remove, swap, move, insert } =
-        useFieldArray({ control, name: 'sections' });
-
-    const onSubmit: SubmitHandler<any> = (data) => {
-        console.log(data);
-    };
-
     return (
         <>
             <Head>

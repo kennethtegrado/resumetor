@@ -2,7 +2,9 @@ import type { FunctionComponent, ReactNode } from 'react';
 
 const Button: FunctionComponent<ButtonProps> = ({ outlined, children }) => {
     return (
-        <button className={`button button-component${outlined && '-outlined'}`}>
+        <button
+            className={`button button-component${outlined ? '-outlined' : ''}`}
+        >
             {children}
         </button>
     );

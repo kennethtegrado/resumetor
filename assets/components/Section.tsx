@@ -1,12 +1,17 @@
 import type { FunctionComponent } from 'react';
 
+// Icon Import
+import { HiPencil } from 'react-icons/hi';
+
 const Section: FunctionComponent<SectionProps> = ({ title }) => {
     return (
         <section className="section__container">
             <div>
                 <h4 className="section__title">
                     {title}
-                    <span className="section__edit-title">H</span>
+                    <span className="section__edit-title">
+                        <HiPencil />
+                    </span>
                 </h4>
             </div>
         </section>

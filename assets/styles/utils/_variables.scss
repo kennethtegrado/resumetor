@@ -1,5 +1,10 @@
+// Colors
 $primary: #525dff;
 $primary-background: rgba(#525dff, 5%);
 $section-background: white;
 $secondary: #29292f;
+$icon-color: lighten($secondary, 75%);
 $shadow-color: darken($primary, 20%);
+
+// Animation
+$bg-hover: background-color 0.5s;

@@ -20,5 +20,17 @@
 .section__edit-title {
     position: absolute;
     font-size: small;
-    right: -1rem;
+    right: -3rem;
+    top: 0rem;
+    background-color: $primary;
+    color: $icon-color;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    cursor: pointer;
+
+    transition: $bg-hover;
+
+    &:hover {
+        background-color: darken($primary, 5%);
+    }
 }

@@ -17,6 +17,6 @@ const Section: FunctionComponent<SectionProps> = ({ title, editableTitle }) => {
 export default Section;
 
 interface SectionProps {
-    title: string;
+    title?: string;
     editableTitle?: boolean;
 }

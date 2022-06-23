@@ -10,7 +10,7 @@ import { useForm } from 'react-hook-form';
 import { HiPencil } from 'react-icons/hi';
 
 const SectionTitle: FunctionComponent<SectionTitleProps> = ({
-    title,
+    title = 'Section Title',
     editableTitle,
 }) => {
     // useForm
@@ -93,6 +93,6 @@ const SectionTitle: FunctionComponent<SectionTitleProps> = ({
 export default SectionTitle;
 
 interface SectionTitleProps {
-    title: string;
+    title?: string;
     editableTitle?: boolean;
 }

@@ -39,7 +39,6 @@ const Home: NextPage = () => {
             </Head>
 
             <main className="home__container">
-                <h1>Personal Information</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <ul>
                         <li>

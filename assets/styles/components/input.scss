@@ -1,0 +1,33 @@
+@use '../utils' as *;
+
+.input-component {
+    outline: none;
+    color: $secondary;
+    padding: 0.5rem;
+    border: 1px solid $secondary-lighter;
+    width: 80%;
+    border-radius: 5px;
+    transition: $animate-hover;
+    margin-bottom: 1rem;
+
+    &:focus,
+    &:active {
+        border-color: $primary-violet;
+        outline: 3px solid rgba($primary, 0.1);
+    }
+
+    &__label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: lighten($secondary, 10%);
+    }
+
+    &__helper {
+        color: $error;
+        margin-top: 0.5rem;
+    }
+
+    @include mobile {
+        width: 100%;
+    }
+}

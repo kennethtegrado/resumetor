@@ -1,4 +1,4 @@
-import type { FunctionComponent } from 'react';
+import type { FunctionComponent, PropsWithoutRef } from 'react';
 
 // React Hook Form
 import { useFormContext } from 'react-hook-form';
@@ -18,17 +18,12 @@ const FormInput: FunctionComponent<FormInputProps> = ({
         <>
             <label
                 htmlFor={name}
-                className="section__change-title-label text__subtitle-2"
+                className="input-component__label text__subtitle-2"
             >
                 {label}
             </label>
-            <input
-                type="text"
-                className="section__change-title"
-                {...register(name)}
-                {...props}
-            />
-            <p className="section__change-title-error text__caption">
+            <input className="input-component" {...register(name)} {...props} />
+            <p className="input-component__helper text__caption">
                 {errors?.[name]?.message}
             </p>
         </>

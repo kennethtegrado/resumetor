@@ -3,6 +3,7 @@ import Head from 'next/head';
 
 // Components import
 import { PersonalInfo } from '@components/sections';
+import Section from '@components/Section';
 
 const Home: NextPage = () => {
     return (
@@ -16,7 +17,7 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main>
+            <main className="home__container">
                 <PersonalInfo />
             </main>
         </>

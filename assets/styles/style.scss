@@ -3,6 +3,12 @@
 @use './components';
 @import 'utils/variables';
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     padding: 2rem;
     margin: 0;

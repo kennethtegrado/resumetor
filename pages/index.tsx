@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 
 // Components import
-import Section from '@components/Section';
+import { PersonalInfo } from '@components/sections';
 
 const Home: NextPage = () => {
     return (
@@ -17,7 +17,7 @@ const Home: NextPage = () => {
             </Head>
 
             <main>
-                <Section title="Personal Information"></Section>
+                <PersonalInfo />
             </main>
         </>
     );

@@ -28,6 +28,11 @@
                 color: $section-background;
             }
         }
+
+        &-block {
+            display: block;
+            width: 100%;
+        }
     }
 
     &-create-link {

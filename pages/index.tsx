@@ -3,6 +3,7 @@ import Head from 'next/head';
 
 // Components import
 import { PersonalInfo } from '@components/sections';
+import { Button } from '@components/ui';
 
 const Home: NextPage = () => {
     return (
@@ -18,6 +19,9 @@ const Home: NextPage = () => {
 
             <main className="home__container">
                 <PersonalInfo />
+                <div className="home__button-container">
+                    <Button block>Create Section</Button>
+                </div>
             </main>
         </>
     );

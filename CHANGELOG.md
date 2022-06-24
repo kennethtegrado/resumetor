@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/kennethtegrado/resumetor/compare/v0.3.1...v0.4.0) (2022-06-24)
+
+
+### Features
+
+* add flex layout for home container ([1053b09](https://github.com/kennethtegrado/resumetor/commit/1053b097a21a39efa453089abb81d45ccb30cf39))
+* add initial styling for the section component ([507245a](https://github.com/kennethtegrado/resumetor/commit/507245a252165a9bf92b0c11bbbc130e062bc63a))
+* add link component for appending links ([7107c2e](https://github.com/kennethtegrado/resumetor/commit/7107c2e1354bebb58fd51ff8ce6e037d836c92cc))
+* add mixins.scss ([1f107c8](https://github.com/kennethtegrado/resumetor/commit/1f107c878a34f60761e61cab56a86bfbbc87b969))
+* add shadow and color style for section ([d3c8e5c](https://github.com/kennethtegrado/resumetor/commit/d3c8e5c8973171b79e34c8bdf86b1e7ea94a9717))
+* add shadow color and div for containing inputs on the header ([05831c4](https://github.com/kennethtegrado/resumetor/commit/05831c47bc414cd621ccfef21c0c196414067dbf))
+* add styling for creating border between inputs ([5446314](https://github.com/kennethtegrado/resumetor/commit/5446314ab73c2bb61714ac4acc151ada7fbd97d5))
+* add styling for edit-title icon ([b4a0761](https://github.com/kennethtegrado/resumetor/commit/b4a076199439bfcbbf3572438a892b6d7638c466))
+* add ui button component ([61ee653](https://github.com/kennethtegrado/resumetor/commit/61ee653ad01c20543289e5e23ca05f3d8a64a59b))
+* change class name for container at index ([9c73e91](https://github.com/kennethtegrado/resumetor/commit/9c73e91a3ebc07cbd58c737a38da0cf7640dcdc7))
+* change input styles for google autocomplete ([86e8155](https://github.com/kennethtegrado/resumetor/commit/86e815521df8f0ec5cc476a7877c00023a95cb03))
+* create deletable component for form input ([dbd9405](https://github.com/kennethtegrado/resumetor/commit/dbd94054477b0c0e437e5a84d1ce595178ff7cd0))
+* create editable section title ([50f5537](https://github.com/kennethtegrado/resumetor/commit/50f5537535345a70c29ffc3e43675d7b56d6d418))
+* create PersonalInfo component ([b7c48e1](https://github.com/kennethtegrado/resumetor/commit/b7c48e11c28d4ad1bf8287c4c25b470f4db728c7))
+* finish button component ([af4817c](https://github.com/kennethtegrado/resumetor/commit/af4817c7325f48fd596d6d774b36061a04214951))
+* fix organization for the utils folder ([e9fa558](https://github.com/kennethtegrado/resumetor/commit/e9fa5587b0f72f25ec88c8058834078d9edac317))
+* **index.tsx:** add additional inputs ([5a3f23e](https://github.com/kennethtegrado/resumetor/commit/5a3f23e694ae56e55cf043f2da30e66a9b1ee5ab))
+* **index.tsx:** add labels for user inputs at personal information ([a44fecb](https://github.com/kennethtegrado/resumetor/commit/a44fecb8886e28b42d4c2f4628ba28348906b73c))
+* **index.tsx:** init personal information section ([391ed07](https://github.com/kennethtegrado/resumetor/commit/391ed0747b2753c5ad7378fa1e54d1939311cf9b))
+* init section.tsx component ([e423adf](https://github.com/kennethtegrado/resumetor/commit/e423adf169296d7820ea7f4be60fed1e1a38b0e1))
+* install react-icons ([de26083](https://github.com/kennethtegrado/resumetor/commit/de260832accbd0e151bdc3a5ee56c496d8f840b7))
+* organize styles directory in assets ([d22a926](https://github.com/kennethtegrado/resumetor/commit/d22a926d4bcc72aa5996dfe517ab97c87de9f1a7))
+* **package:** installed recoil ([09b18b6](https://github.com/kennethtegrado/resumetor/commit/09b18b6871138fca8cfd5d2da7b70dbd0297fb1f))
+* **typography.scss:** add new font style ([bf01942](https://github.com/kennethtegrado/resumetor/commit/bf019428f6f25afc52535be437cb5d8f2189d21f))
+* **typography.scss:** add typography styles ([11b63ea](https://github.com/kennethtegrado/resumetor/commit/11b63ea949f6b49429171b68d503368133522f05))
+
 ### [0.3.1](https://github.com/kennethtegrado/resumetor/compare/v0.3.0...v0.3.1) (2022-06-20)
 
 

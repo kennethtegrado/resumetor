@@ -69,7 +69,7 @@ const PersonalInfo: FunctionComponent = () => {
                             required
                             error={
                                 methods.formState.errors?.link?.[index]?.link
-                                    ? 'Put a link to other platforms.'
+                                    ? 'Put a valid link for your contacts.'
                                     : ''
                             }
                         />
@@ -77,6 +77,7 @@ const PersonalInfo: FunctionComponent = () => {
                     <button
                         className="text__body-2 button-create-link"
                         onClick={() => append({})}
+                        type="button"
                     >
                         Add Link
                     </button>

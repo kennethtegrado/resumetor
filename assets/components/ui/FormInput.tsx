@@ -32,7 +32,10 @@ const FormInput: FunctionComponent<FormInputProps> = ({
             <br />
             <input
                 className="input-component"
-                {...register(name, { required, pattern: new RegExp(pattern) })}
+                {...register(name, {
+                    required,
+                    pattern: new RegExp(pattern, 'ig'),
+                })}
                 {...props}
             />
             <p className="input-component__helper text__caption">{error}</p>

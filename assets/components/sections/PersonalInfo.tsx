@@ -51,6 +51,16 @@ const PersonalInfo: FunctionComponent = () => {
                                 }
                             />
                             <FormInput
+                                label="Job Position"
+                                name="position"
+                                required
+                                error={
+                                    methods.formState.errors?.name
+                                        ? 'Put the job position you are applying.'
+                                        : ''
+                                }
+                            />
+                            <FormInput
                                 label="Email"
                                 name="email"
                                 props={{ type: 'email' }}

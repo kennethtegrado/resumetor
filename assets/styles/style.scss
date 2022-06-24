@@ -1,0 +1,16 @@
+@use './base';
+@use './pages';
+@use './components';
+@use './utils' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 2rem;
+    margin: 0;
+    background-color: $primary-background;
+}

@@ -1,0 +1,49 @@
+@use '../utils' as *;
+
+.button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: $animate-hover;
+    padding: 0.5rem 2rem;
+
+    &-component {
+        background: $primary;
+        color: $section-background;
+
+        &:hover {
+            background: $primary-violet;
+        }
+
+        &-outlined {
+            padding: 0.5rem 2rem;
+            outline: none;
+            border: 2px solid $primary;
+            background-color: $section-background;
+            color: $primary;
+
+            &:hover {
+                background-color: $primary;
+                color: $section-background;
+            }
+        }
+    }
+
+    &-create-link {
+        display: block;
+        background: $section-background;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        border-bottom: 1px solid $secondary-light;
+        margin-bottom: 2rem;
+        color: $secondary-light;
+        transition: $animate-hover;
+
+        &:hover {
+            border-color: $secondary;
+            color: $secondary;
+        }
+    }
+}

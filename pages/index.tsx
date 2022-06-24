@@ -1,23 +1,11 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import styles from '@styles/page/Home.module.scss';
 
-// React Hook Form
-import { useForm } from 'react-hook-form';
-import type { SubmitHandler } from 'react-hook-form';
+// Components import
+import { PersonalInfo } from '@components/sections';
+import Section from '@components/Section';
 
 const Home: NextPage = () => {
-    // Destructure Hook Forms
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm<FieldValues>();
-
-    const onSubmit: SubmitHandler<FieldValues> = (data) => {
-        console.log(data);
-    };
-
     return (
         <>
             <Head>
@@ -29,15 +17,8 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className={styles.main}>
-                <h1>Hello World</h1>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <input {...register('name')} />
-                    <br />
-                    <input {...register('email')} />
-                    <br />
-                    <button type="submit">Hello World</button>
-                </form>
+            <main className="home__container">
+                <PersonalInfo />
             </main>
         </>
     );
@@ -45,7 +26,12 @@ const Home: NextPage = () => {
 
 export default Home;
 
-type FieldValues = {
+// type FieldValues = {
+//     name: string;
+//     email: string;
+// };
+
+interface Field {
+    id: string;
     name: string;
-    email: string;
-};
+}

@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.1](https://github.com/kennethtegrado/resumetor/compare/v0.4.0...v0.4.1) (2022-06-24)
+
+
+### Features
+
+* create ViewData component ([5a9ae7d](https://github.com/kennethtegrado/resumetor/commit/5a9ae7d2ac700f4cd6e46289216b89d598556760))
+
+
+### Bug Fixes
+
+* remove console.log from personalinfo ([7357d89](https://github.com/kennethtegrado/resumetor/commit/7357d89d156ccc32541ffa5325d738adb41485ca))
+
 ## [0.4.0](https://github.com/kennethtegrado/resumetor/compare/v0.3.1...v0.4.0) (2022-06-24)
 
 

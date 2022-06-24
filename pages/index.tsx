@@ -4,8 +4,20 @@ import Head from 'next/head';
 // Components import
 import { PersonalInfo } from '@components/sections';
 import Section from '@components/Section';
+import { Button } from '@components/ui';
+
+// React Hook Form
+import { useFieldArray, useForm } from 'react-hook-form';
 
 const Home: NextPage = () => {
+    const { control, register } = useForm();
+
+    const { fields, append, prepend, remove, swap, move, insert } =
+        useFieldArray({
+            control, // control props comes from useForm (optional: if you are using FormContext)
+            name: 'sections', // unique name for your Field Array
+        });
+
     return (
         <>
             <Head>
@@ -19,19 +31,19 @@ const Home: NextPage = () => {
 
             <main className="home__container">
                 <PersonalInfo />
+                {fields.map((item, index) => (
+                    <Section key={item.id} editableTitle>
+                        <div></div>
+                    </Section>
+                ))}
+                <div className="home__button-container">
+                    <Button block onClick={() => append({})}>
+                        Create Section
+                    </Button>
+                </div>
             </main>
         </>
     );
 };
 
 export default Home;
-
-// type FieldValues = {
-//     name: string;
-//     email: string;
-// };
-
-interface Field {
-    id: string;
-    name: string;
-}

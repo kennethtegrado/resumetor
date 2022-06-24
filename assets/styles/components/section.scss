@@ -2,13 +2,7 @@
 
 .section {
     &__container {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        background-color: $section-background;
         padding: 3rem;
-        border-radius: 5px;
-        box-shadow: 0 5px 10px rgba($shadow-color, 0.05);
     }
 
     &__title {

@@ -19,7 +19,7 @@ const FormInput: FunctionComponent<FormInputProps> = ({
     const { register } = useFormContext();
 
     return (
-        <>
+        <div className="input-component__container">
             <label
                 htmlFor={name}
                 className="input-component__label text__subtitle-2"
@@ -36,7 +36,7 @@ const FormInput: FunctionComponent<FormInputProps> = ({
                 {...props}
             />
             <p className="input-component__helper text__caption">{error}</p>
-        </>
+        </div>
     );
 };
 

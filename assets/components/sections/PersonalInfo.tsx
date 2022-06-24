@@ -17,7 +17,7 @@ const PersonalInfo: FunctionComponent = () => {
         });
 
     const onSubmit = (data: any) => console.log(data);
-
+    console.log(methods.formState.errors?.link?.[0]?.link);
     return (
         <Section title="Resume Header">
             <FormProvider {...methods}>
@@ -55,7 +55,7 @@ const PersonalInfo: FunctionComponent = () => {
                         name="address"
                         required
                         error={
-                            methods.formState.errors?.email
+                            methods.formState.errors?.address
                                 ? 'Put a location so employers will know if you are near.'
                                 : ''
                         }
@@ -66,6 +66,12 @@ const PersonalInfo: FunctionComponent = () => {
                             label={`Link ${index + 1}`}
                             name={`link.${index}.link`}
                             remove={() => remove(index)}
+                            required
+                            error={
+                                methods.formState.errors?.link?.[index]?.link
+                                    ? 'Put a link to other platforms.'
+                                    : ''
+                            }
                         />
                     ))}
                     <button

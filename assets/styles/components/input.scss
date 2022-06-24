@@ -15,15 +15,15 @@
         outline: 3px solid rgba($primary, 0.1);
     }
 
+    &__container {
+        margin-bottom: 1rem;
+    }
+
     &__label {
         display: inline-block;
         position: relative;
         margin-bottom: 0.5rem;
         color: lighten($secondary, 10%);
-
-        &:not(:first-of-type) {
-            margin-top: 1rem;
-        }
     }
 
     &__helper {

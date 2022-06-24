@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/kennethtegrado/resumetor/compare/v0.4.1...v0.5.0) (2022-06-24)
+
+
+### Features
+
+* add create section button ([6957aa0](https://github.com/kennethtegrado/resumetor/commit/6957aa024687d78de60af21af9c58388a1aef744))
+* add form input for job position and styling for the content ([0ad3dc3](https://github.com/kennethtegrado/resumetor/commit/0ad3dc333d386a036bac08c7b48ff9284c3ef8d9))
+* add index.ts from utils for easy import ([21f95e2](https://github.com/kennethtegrado/resumetor/commit/21f95e263e8e2cc9ee95baf26e5797327979e612))
+* add template for appending section ([bfbcc17](https://github.com/kennethtegrado/resumetor/commit/bfbcc17362f8d7ecea77c699c1eebb8c9e0ef4ff))
+* change home container styling ([81bd18d](https://github.com/kennethtegrado/resumetor/commit/81bd18d8c09a60560e38840fba0241a89d727ea6))
+* change makeArray configurations ([9895610](https://github.com/kennethtegrado/resumetor/commit/98956102e4d854d4b2a63c726abb1955e3a2d0c9))
+* change makeArray from sync to async function ([b035238](https://github.com/kennethtegrado/resumetor/commit/b035238186e251ed2d72d650ff3743b017a6530d))
+* change rendering method for ViewData component ([369e846](https://github.com/kennethtegrado/resumetor/commit/369e8467dc98de27f87574a8dea77d9ba5cf8db9))
+* design the content for the view data ([218e361](https://github.com/kennethtegrado/resumetor/commit/218e361bf20e86a51a71e9f4dab5fdf0cbe2e4b1))
+* fix tsconfig and added content for viewdata ([8819423](https://github.com/kennethtegrado/resumetor/commit/88194237dd6dd3bcc3a566a981777d369b562b8b))
+* **makeArray:** create makeArray util function ([9cd1170](https://github.com/kennethtegrado/resumetor/commit/9cd11707a558b8b4033e1e18b4ddeb433af63e81))
+* **tsconfig:** add [@utils](https://github.com/utils) on paths ([badd399](https://github.com/kennethtegrado/resumetor/commit/badd39946724473c5aecd974fb9574820108a884))
+
+
+### Bug Fixes
+
+* finish bug of not rendering data values ([5794fa7](https://github.com/kennethtegrado/resumetor/commit/5794fa7514fe04693d2e82b86e521e7fb67718b2))
+
 ### [0.4.1](https://github.com/kennethtegrado/resumetor/compare/v0.4.0...v0.4.1) (2022-06-24)
 
 

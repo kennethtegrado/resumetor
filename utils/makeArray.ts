@@ -1,4 +1,4 @@
-const makeArray = (data: any): Array<makeArrayResult | any> => {
+const makeArray = async (data: any): Promise<Array<makeArrayResult | any>> => {
     const dataArray = [];
 
     for (const key in data) {

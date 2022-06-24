@@ -1,16 +1,15 @@
 import { FunctionComponent, useEffect, useState } from 'react';
 
 const ViewData: FunctionComponent<ViewDataProps> = ({ data }) => {
-    console.log(data);
     return (
-        <div>
-            {data.map((item: Fields, index: number) => {
+        <>
+            {data.map(({ key, value }: Fields, index: number) => (
                 <div key={index}>
-                    <h6>{item.key}</h6>
-                    <p>{item.value}</p>
-                </div>;
-            })}
-        </div>
+                    <h6>{key}</h6>
+                    <p className="text__body-2">{value}</p>
+                </div>
+            ))}
+        </>
     );
 };
 

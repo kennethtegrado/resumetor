@@ -9,10 +9,11 @@ import { Button, FormInput, ViewData } from '@components/ui';
 // React Hook Form
 import { FormProvider, useForm, useFieldArray } from 'react-hook-form';
 import { makeArray } from '@utils';
+import { useEffect } from 'react';
 
 const PersonalInfo: FunctionComponent = () => {
     const [viewData, setViewData] = useState(false);
-    const [personalData, setPersonalData] = useState({});
+    const [personalData, setPersonalData] = useState<Array<Fields>>([]);
     const methods = useForm();
 
     const { fields, append, remove } = useFieldArray({
@@ -22,9 +23,11 @@ const PersonalInfo: FunctionComponent = () => {
 
     const onSubmit = async (data: any) => {
         const dataArray = await makeArray(data);
-        setViewData(true);
         setPersonalData(dataArray);
     };
+    useEffect(() => {
+        if (personalData.length) setViewData(true);
+    }, [personalData]);
 
     return (
         <Section title="Resume Header">
@@ -101,3 +104,8 @@ const PersonalInfo: FunctionComponent = () => {
 };
 
 export default PersonalInfo;
+
+interface Fields {
+    key: string;
+    value: string;
+}

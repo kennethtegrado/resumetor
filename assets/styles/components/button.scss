@@ -29,4 +29,21 @@
             }
         }
     }
+
+    &-create-link {
+        display: block;
+        background: $section-background;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        border-bottom: 1px solid $secondary-light;
+        margin-bottom: 2rem;
+        color: $secondary-light;
+        transition: $animate-hover;
+
+        &:hover {
+            border-color: $secondary;
+            color: $secondary;
+        }
+    }
 }

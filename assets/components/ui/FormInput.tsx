@@ -10,7 +10,9 @@ const FormInput: FunctionComponent<FormInputProps> = ({
     label,
     name,
     error = '',
+    required,
     remove,
+    pattern = '.',
     ...props
 }) => {
     // Useform Context
@@ -28,7 +30,11 @@ const FormInput: FunctionComponent<FormInputProps> = ({
                 )}
             </label>
             <br />
-            <input className="input-component" {...register(name)} {...props} />
+            <input
+                className="input-component"
+                {...register(name, { required, pattern: new RegExp(pattern) })}
+                {...props}
+            />
             <p className="input-component__helper text__caption">{error}</p>
         </>
     );
@@ -39,7 +45,9 @@ export default FormInput;
 interface FormInputProps {
     label: string;
     name: string;
+    required?: boolean;
     error?: string;
     props?: any;
+    pattern?: string;
     remove?: () => void;
 }

@@ -17,7 +17,7 @@ const PersonalInfo: FunctionComponent = () => {
         });
 
     const onSubmit = (data: any) => console.log(data);
-    console.log(methods.formState.errors?.link?.[0]?.link);
+
     return (
         <Section title="Resume Header">
             <FormProvider {...methods}>

@@ -4,7 +4,7 @@ import type { FunctionComponent, PropsWithoutRef } from 'react';
 import { useFormContext } from 'react-hook-form';
 
 // Icon Import
-import { MdDelete } from 'react-icons/md';
+import { TiDelete } from 'react-icons/ti';
 
 const FormInput: FunctionComponent<FormInputProps> = ({
     label,
@@ -24,9 +24,7 @@ const FormInput: FunctionComponent<FormInputProps> = ({
             >
                 {label}{' '}
                 {remove && (
-                    <span className="deletable__icon" onClick={remove}>
-                        <MdDelete className="deletable__svg" />
-                    </span>
+                    <TiDelete className="deletable__icon" onClick={remove} />
                 )}
             </label>
             <br />

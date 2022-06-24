@@ -14,7 +14,8 @@ $icon-color: lighten($secondary, 75%);
 $shadow-color: darken($primary, 20%);
 
 /// Accents
-$error: #ee2b2b;
+$error: #e44646;
+$error-light: lighten($error, 10%);
 $sucess: #81e052;
 $warning: #ffbe4d;
 

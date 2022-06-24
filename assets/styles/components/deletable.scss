@@ -4,27 +4,17 @@
     position: relative;
 
     &__icon {
+        display: block;
         position: absolute;
-        cursor: pointer;
-        right: -3rem;
+        right: -2rem;
         top: -0.3rem;
-        color: $section-background;
-        background-color: $primary-dark;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 1.5rem;
-        height: 1.5rem;
-        border-radius: 5px;
-
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: $error;
         transition: $animate-hover;
 
         &:hover {
-            background-color: $primary-violet;
+            color: $error-light;
         }
-    }
-
-    &__svg {
-        display: block;
     }
 }

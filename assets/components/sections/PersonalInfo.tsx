@@ -21,22 +21,52 @@ const PersonalInfo: FunctionComponent = () => {
     return (
         <Section title="Resume Header">
             <FormProvider {...methods}>
-                <form onSubmit={methods.handleSubmit(onSubmit)}>
-                    <FormInput label="Name" name="name" />
+                <form
+                    onSubmit={methods.handleSubmit(onSubmit)}
+                    className="section__form"
+                >
+                    <FormInput
+                        label="Name"
+                        name="name"
+                        required
+                        error={
+                            methods.formState.errors?.name
+                                ? 'Put a name so employers will know who you are.'
+                                : ''
+                        }
+                    />
                     <FormInput
                         label="Email"
                         name="email"
                         props={{ type: 'email' }}
+                        required
+                        pattern={
+                            '^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$'
+                        }
+                        error={
+                            methods.formState.errors?.email
+                                ? 'Put a valid email so employers will know how to contact you.'
+                                : ''
+                        }
                     />
-                    <FormInput label="Location" name="address" />
+                    <FormInput label="Number" name="number" />
+                    <FormInput
+                        label="Location"
+                        name="address"
+                        required
+                        error={
+                            methods.formState.errors?.email
+                                ? 'Put a location so employers will know if you are near.'
+                                : ''
+                        }
+                    />
                     {fields.map((field, index) => (
-                        <div key={field.id} className="deletable">
-                            <FormInput
-                                label={`Link ${index + 1}`}
-                                name={`link.${index}.link`}
-                                remove={() => remove(index)}
-                            />
-                        </div>
+                        <FormInput
+                            key={field.id}
+                            label={`Link ${index + 1}`}
+                            name={`link.${index}.link`}
+                            remove={() => remove(index)}
+                        />
                     ))}
                     <button
                         className="text__body-2 button-create-link"

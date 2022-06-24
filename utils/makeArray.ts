@@ -4,6 +4,8 @@ const makeArray = async (data: any): Promise<Array<makeArrayResult | any>> => {
     for (const key in data) {
         let dataItem: dataItem = {};
 
+        if (!data[key]) continue;
+
         if (!Array.isArray(data[key])) {
             dataItem.key = key;
             dataItem.value = data[key];

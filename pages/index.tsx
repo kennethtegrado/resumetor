@@ -3,7 +3,6 @@ import Head from 'next/head';
 
 // Components import
 import { PersonalInfo } from '@components/sections';
-import Section from '@components/Section';
 
 const Home: NextPage = () => {
     return (
@@ -25,13 +24,3 @@ const Home: NextPage = () => {
 };
 
 export default Home;
-
-// type FieldValues = {
-//     name: string;
-//     email: string;
-// };
-
-interface Field {
-    id: string;
-    name: string;
-}

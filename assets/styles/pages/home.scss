@@ -5,6 +5,12 @@
     flex-direction: column;
     width: 100%;
     gap: 3rem;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba($shadow-color, 0.05);
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: $section-background;
 }
 
 .viewdata {

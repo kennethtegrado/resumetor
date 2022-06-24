@@ -33,7 +33,6 @@ const PersonalInfo: FunctionComponent = () => {
     return (
         <Section title="Resume Header">
             <div>
-                {' '}
                 {!viewData && (
                     <FormProvider {...methods}>
                         <form

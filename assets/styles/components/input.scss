@@ -17,7 +17,8 @@
     }
 
     &__label {
-        display: block;
+        display: inline-block;
+        position: relative;
         margin-bottom: 0.5rem;
         color: lighten($secondary, 10%);
     }

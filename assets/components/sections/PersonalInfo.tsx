@@ -30,11 +30,13 @@ const PersonalInfo: FunctionComponent = () => {
                     />
                     <FormInput label="Location" name="address" />
                     {fields.map((field, index) => (
-                        <FormInput
-                            key={field.id}
-                            label={`Link ${index + 1}`}
-                            name={`link.${index}.value`}
-                        />
+                        <div key={field.id} className="deletable">
+                            <FormInput
+                                label={`Link ${index + 1}`}
+                                name={`link.${index}.link`}
+                                remove={() => remove(index)}
+                            />
+                        </div>
                     ))}
                     <button
                         className="text__body-2 button-create-link"

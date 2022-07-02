@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.6.0](https://github.com/kennethtegrado/resumetor/compare/v0.5.0...v0.6.0) (2022-07-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* use components in MUI library not installed before
+
+### Features
+
+* create resume header section ([7459893](https://github.com/kennethtegrado/resumetor/commit/74598934f964c79865fc94c8bfbd5f1d25252426)), closes [#11](https://github.com/kennethtegrado/resumetor/issues/11)
+* install ant design ([cbb10a5](https://github.com/kennethtegrado/resumetor/commit/cbb10a59c8fcfceca8815acf46c5d8f746074aa5))
+
 ## [0.5.0](https://github.com/kennethtegrado/resumetor/compare/v0.4.1...v0.5.0) (2022-06-24)
 
 

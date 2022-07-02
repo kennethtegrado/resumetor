@@ -2,12 +2,13 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 
 // Components import
-import { PersonalInfo } from '@components/sections';
+import { ResumeHeader } from '@components/sections';
 import Section from '@components/Section';
 import { Button } from '@components/ui';
 
 // React Hook Form
 import { useFieldArray, useForm } from 'react-hook-form';
+import { Container } from '@mui/system';
 
 const Home: NextPage = () => {
     const { control, register } = useForm();
@@ -29,18 +30,20 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className="home__container">
-                <PersonalInfo />
-                {fields.map((item, index) => (
-                    <Section key={item.id} editableTitle>
-                        <div></div>
-                    </Section>
-                ))}
-                <div className="home__button-container">
-                    <Button block onClick={() => append({})}>
-                        Create Section
-                    </Button>
-                </div>
+            <main>
+                <Container>
+                    <ResumeHeader />
+                    {fields.map((item, index) => (
+                        <Section key={item.id} editableTitle>
+                            <div></div>
+                        </Section>
+                    ))}
+                    <div className="home__button-container">
+                        <Button block onClick={() => append({})}>
+                            Create Section
+                        </Button>
+                    </div>
+                </Container>
             </main>
         </>
     );

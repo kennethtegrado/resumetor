@@ -1,3 +1,4 @@
-import makeArray from './makeArray';
+import makeArrayHeaderData from './makeArrayHeaderData';
+import shortenLink from './shortenLink';
 
-export { makeArray };
+export { makeArrayHeaderData, shortenLink };

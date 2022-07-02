@@ -1,3 +1,3 @@
-import PersonalInfo from './PersonalInfo';
+import ResumeHeader from './ResumeHeader';
 
-export { PersonalInfo };
+export { ResumeHeader };

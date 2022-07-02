@@ -6,6 +6,8 @@ import { useState, useRef, useEffect } from 'react';
 // React Hook Form
 import { useForm } from 'react-hook-form';
 
+import { CardHeader, IconButton, TextField, Typography } from '@mui/material';
+
 // Icon Import
 import { HiPencil } from 'react-icons/hi';
 
@@ -27,7 +29,7 @@ const SectionTitle: FunctionComponent<SectionTitleProps> = ({
     });
 
     // Input Ref
-    const inputRef = useRef<HTMLInputElement | null>(null);
+    const inputRef = useRef<HTMLDivElement | null>(null);
 
     // States
     const [showTitle, setShowTitle] = useState(true);
@@ -50,43 +52,45 @@ const SectionTitle: FunctionComponent<SectionTitleProps> = ({
     };
 
     return (
-        <form onSubmit={handleSubmit(changeTitle)}>
-            {showTitle && (
-                <h4 className="section__title">
-                    {sectionTitle}
-                    {editableTitle && (
-                        <span
-                            className="section__edit-title"
-                            onClick={clickEdit}
-                        >
-                            <HiPencil className="section__edit-title-icon" />
-                        </span>
-                    )}
-                </h4>
-            )}
-            {!showTitle && (
-                <>
-                    <label
-                        htmlFor={title.split(' ').join('-')}
-                        className="section__change-title-label text__subtitle-2"
+        <CardHeader
+            action={
+                editableTitle && (
+                    <IconButton color="primary" onClick={clickEdit}>
+                        {showTitle && <HiPencil />}
+                    </IconButton>
+                )
+            }
+            autoFocus
+            title={
+                showTitle ? (
+                    <Typography
+                        variant={'h4'}
+                        component={'h4'}
+                        sx={{ fontWeight: 600 }}
                     >
-                        Section title
-                    </label>
-                    <input
-                        type="text"
-                        className="section__change-title"
-                        {...rest}
-                        ref={(e) => {
-                            ref(e);
-                            inputRef.current = e;
-                        }}
-                    />
-                    <p className="section__change-title-error text__caption">
-                        {errors?.[title.split(' ').join('-')]?.message}
-                    </p>
-                </>
-            )}
-        </form>
+                        {sectionTitle}
+                    </Typography>
+                ) : (
+                    <form onSubmit={handleSubmit(changeTitle)}>
+                        <TextField
+                            label="Section Title"
+                            error={
+                                errors?.[title.split(' ').join('-')]?.message
+                            }
+                            helperText={
+                                errors?.[title.split(' ').join('-')]?.message
+                            }
+                            {...rest}
+                            ref={(e) => {
+                                ref(e);
+                                inputRef.current = e;
+                            }}
+                            variant={'standard'}
+                        />
+                    </form>
+                )
+            }
+        />
     );
 };
 

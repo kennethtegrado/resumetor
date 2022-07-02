@@ -1,7 +1,7 @@
 import type { FunctionComponent, ReactNode } from 'react';
 
-// Icon Import
-import { HiPencil } from 'react-icons/hi';
+// MUI IMPORT
+import { Card, CardContent } from '@mui/material';
 
 // Component Import
 import { SectionTitle } from '@components/ui';
@@ -12,10 +12,10 @@ const Section: FunctionComponent<SectionProps> = ({
     children,
 }) => {
     return (
-        <section className="section__container">
+        <Card sx={{ p: 5 }}>
             <SectionTitle title={title} editableTitle={editableTitle} />
-            <div>{children}</div>
-        </section>
+            <CardContent>{children}</CardContent>
+        </Card>
     );
 };
 
@@ -24,5 +24,5 @@ export default Section;
 interface SectionProps {
     title?: string;
     editableTitle?: boolean;
-    children: ReactNode;
+    children?: ReactNode;
 }

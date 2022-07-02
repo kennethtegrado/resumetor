@@ -2,23 +2,11 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 
 // Components import
-import { ResumeHeader } from '@components/sections';
-import Section from '@components/Section';
-import { Button } from '@components/ui';
+import { ResumeHeader, ResumeSections } from '@components/sections';
 
-// React Hook Form
-import { useFieldArray, useForm } from 'react-hook-form';
 import { Container } from '@mui/system';
 
 const Home: NextPage = () => {
-    const { control, register } = useForm();
-
-    const { fields, append, prepend, remove, swap, move, insert } =
-        useFieldArray({
-            control, // control props comes from useForm (optional: if you are using FormContext)
-            name: 'sections', // unique name for your Field Array
-        });
-
     return (
         <>
             <Head>
@@ -33,16 +21,7 @@ const Home: NextPage = () => {
             <main>
                 <Container>
                     <ResumeHeader />
-                    {fields.map((item, index) => (
-                        <Section key={item.id} editableTitle>
-                            <div></div>
-                        </Section>
-                    ))}
-                    <div className="home__button-container">
-                        <Button block onClick={() => append({})}>
-                            Create Section
-                        </Button>
-                    </div>
+                    <ResumeSections />
                 </Container>
             </main>
         </>

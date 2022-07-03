@@ -24,7 +24,7 @@ const ResumeSections: FunctionComponent = () => {
 
     return (
         <>
-            {fields.map((item, index) => (
+            {fields.map((item: any, index) => (
                 <Fragment key={item.id}>
                     <Box sx={{ my: 4 }}>
                         <Button

@@ -10,6 +10,7 @@ export default Yup.object().shape({
                 location: Yup.string().required(
                     'Please indicate the location of your school.'
                 ),
+                degree: Yup.string().required('Please put your degree.'),
                 startYear: Yup.string()
                     .required(
                         'Please indicate your start year for this school.'

@@ -57,7 +57,7 @@ const EducationSubsection: FunctionComponent<EducationSubsectionProps> = ({
                     />
                 </Grid>
             ))}
-            <Grid>
+            <Grid item xs={12}>
                 <Button
                     variant="text"
                     sx={{ px: 2, my: 1 }}

@@ -13,6 +13,7 @@ export interface EducationSectionValues {
 
 export interface SchoolSectionValues {
     school: string;
+    degree: string;
     location: string;
     startYear: number;
     endYear: number;

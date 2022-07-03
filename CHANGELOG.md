@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.7.0](https://github.com/kennethtegrado/resumetor/compare/v0.6.1...v0.7.0) (2022-07-03)
+
+
+### Features
+
+* add education section feature ([e2ff61c](https://github.com/kennethtegrado/resumetor/commit/e2ff61ce4db43251c3c95739c6a8c4a4687f370b)), closes [#14](https://github.com/kennethtegrado/resumetor/issues/14)
+* add sortEducationData utils function ([3064c2c](https://github.com/kennethtegrado/resumetor/commit/3064c2cbe09f53f2ba8fd07106b8b2a5acdf53d2))
+
+
+### Bug Fixes
+
+* change item type on resume section to any ([c6fd1c0](https://github.com/kennethtegrado/resumetor/commit/c6fd1c0e8230ab1a8387ba34cdafeb1f31c7aa02))
+
 ### [0.6.1](https://github.com/kennethtegrado/resumetor/compare/v0.6.0...v0.6.1) (2022-07-03)
 
 

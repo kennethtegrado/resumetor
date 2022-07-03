@@ -1,4 +1,6 @@
-import { PersonalFields, ResumeHeaderValues } from '@interface/reactHookForm';
+import { PersonalFields } from '@interface/reactHookForm';
+
+import type { FieldValues } from 'react-hook-form';
 
 import shortenLink from './shortenLink';
 
@@ -25,12 +27,12 @@ import shortenLink from './shortenLink';
  * @returns An array of objects.
  */
 const makeArrayHeaderData = async (
-    ResumeHeaderData: ResumeHeaderValues
+    ResumeHeaderData: FieldValues
 ): Promise<Array<PersonalFields>> => {
     const makeArrayResult: PersonalFields[] = [];
 
     for (const key in ResumeHeaderData) {
-        const value = ResumeHeaderData[key as keyof ResumeHeaderValues];
+        const value = ResumeHeaderData[key as keyof FieldValues];
 
         // Check if the key is not a link
         if (key !== 'link') {

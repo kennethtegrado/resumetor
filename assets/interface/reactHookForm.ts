@@ -7,6 +7,24 @@ export interface ResumeHeaderValues {
     link?: any;
 }
 
+export interface EducationSectionValues {
+    education: SchoolSectionValues[];
+}
+
+export interface SchoolSectionValues {
+    school: string;
+    degree: string;
+    location: string;
+    startYear: number;
+    endYear: number;
+    subsection?: SchoolSubsectionValues[];
+}
+
+export interface SchoolSubsectionValues {
+    title: string;
+    content: string;
+}
+
 export interface PersonalFields {
     key: string;
     value: string | PersonalLink;

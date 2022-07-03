@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 // Component Import
 import Section from '@components/Section';
-import { ViewHeaderData } from '@components/ui';
+import { ViewHeaderData, SaveButton } from '@components/ui';
 
 // MUI Import
 import {
@@ -18,10 +18,11 @@ import {
 } from '@mui/material';
 
 // Icon Import
-import { TiBookmark, TiDelete } from 'react-icons/ti';
+import { TiDelete } from 'react-icons/ti';
 
 // React Hook Form
 import { useForm, useFieldArray } from 'react-hook-form';
+import type { SubmitHandler, FieldValues } from 'react-hook-form';
 
 // Resolver
 import { resumeHeaderResolver } from '@schema';
@@ -34,8 +35,10 @@ import { ResumeHeaderValues, PersonalFields } from '@interface/reactHookForm';
 
 const PersonalInfo: FunctionComponent = () => {
     // States
-    const [viewData, setViewData] = useState(false);
-    const [showSnackbar, setShowSnackbar] = useState(false);
+    const [viewData, setViewData] = useState<boolean>(false);
+
+    const [showSnackbar, setShowSnackbar] = useState<boolean>(false);
+
     const [personalData, setPersonalData] = useState<Array<PersonalFields>>([
         { key: 'name', value: 'hello' },
     ]);
@@ -54,7 +57,7 @@ const PersonalInfo: FunctionComponent = () => {
         name: 'link', // unique name for your Field Array
     });
 
-    const onSubmit = async (data: any) => {
+    const onSubmit: SubmitHandler<FieldValues> = async (data) => {
         const dataArray = await makeArrayHeaderData(data);
         setPersonalData(dataArray);
     };
@@ -181,14 +184,7 @@ const PersonalInfo: FunctionComponent = () => {
                     >
                         Add Link
                     </Button>
-                    <Button
-                        variant="contained"
-                        endIcon={<TiBookmark />}
-                        type="submit"
-                        sx={{ px: 5 }}
-                    >
-                        Save
-                    </Button>
+                    <SaveButton />
                 </form>
             )}
             {viewData && (

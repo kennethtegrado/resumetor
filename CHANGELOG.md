@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.6.1](https://github.com/kennethtegrado/resumetor/compare/v0.6.0...v0.6.1) (2022-07-03)
+
+
+### Features
+
+* add education yup schema and resolver ([3a5f5ac](https://github.com/kennethtegrado/resumetor/commit/3a5f5ace7b787d0f29fbc0408196c4ca4377d53b))
+* add EducationSection component ([19b05bb](https://github.com/kennethtegrado/resumetor/commit/19b05bba7d33a2e3a3cc1e922e9c55308253c0ee))
+* add EducationSubsection to EducationSection component ([6c4c811](https://github.com/kennethtegrado/resumetor/commit/6c4c811a2ffe1a61e51f8eb8e7626a3fa34c7b8c))
+* add SaveButton component ([c025c2c](https://github.com/kennethtegrado/resumetor/commit/c025c2ca001010c6e1f6e741bda17b9b9ac96ad7))
+* create resume sections components ([48b86c0](https://github.com/kennethtegrado/resumetor/commit/48b86c0eb782affc4556a7cccf63f59c0990aee3))
+
 ## [0.6.0](https://github.com/kennethtegrado/resumetor/compare/v0.5.0...v0.6.0) (2022-07-02)
 
 

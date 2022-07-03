@@ -8,6 +8,7 @@ import { PersonalFields } from '@interface/reactHookForm';
 
 // Component Import
 import { GoPencil } from 'react-icons/go';
+import EditButton from './EditButton';
 
 const ViewData: FunctionComponent<ViewDataProps> = ({ data, toggleEdit }) => {
     return (
@@ -38,14 +39,7 @@ const ViewData: FunctionComponent<ViewDataProps> = ({ data, toggleEdit }) => {
                     </Grid>
                 ))}
             </Grid>
-            <Button
-                color="primary"
-                variant="contained"
-                sx={{ px: 4 }}
-                onClick={toggleEdit}
-            >
-                Edit <GoPencil />
-            </Button>
+            <EditButton edit={toggleEdit} />
         </>
     );
 };

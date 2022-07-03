@@ -6,10 +6,21 @@ import { SaveButton } from '@components/ui';
 import EducationSubsection from './EducationSubsection';
 
 // MUI Import
-import { Box, Button, Chip, Divider, Grid, TextField } from '@mui/material';
+import {
+    Box,
+    Button,
+    Divider,
+    Grid,
+    TextField,
+    Typography,
+} from '@mui/material';
 
 // React Hook Form
 import { useForm, useFieldArray } from 'react-hook-form';
+import type { SubmitHandler, FieldValues } from 'react-hook-form';
+
+// Resolver
+import { educationResolver } from '@schema';
 
 const EducationSection: FunctionComponent = () => {
     // School Section
@@ -18,7 +29,7 @@ const EducationSection: FunctionComponent = () => {
         handleSubmit,
         control,
         formState: { errors },
-    } = useForm();
+    } = useForm({ resolver: educationResolver });
 
     // useFieldArray
     const { append, fields, remove } = useFieldArray({
@@ -26,7 +37,8 @@ const EducationSection: FunctionComponent = () => {
         name: 'education',
     });
 
-    const submitEducationForm = (data: any) => console.log(data);
+    const submitEducationForm: SubmitHandler<FieldValues> = (data: any) =>
+        console.log(data);
 
     return (
         <Section title="Education" editableTitle type="education">
@@ -39,53 +51,89 @@ const EducationSection: FunctionComponent = () => {
                                     <Grid item xs={12} md={6}>
                                         <TextField
                                             label="School"
-                                            helperText={
-                                                'Ex: University of the Philippines - Los Baños'
-                                            }
                                             variant="standard"
                                             sx={{ width: '100%' }}
                                             {...register(
                                                 `education[${index}].school`
                                             )}
+                                            error={
+                                                !!errors?.education?.[index]
+                                                    ?.school
+                                            }
+                                            helperText={
+                                                errors?.education?.[index]
+                                                    ?.school?.message ||
+                                                'Ex: University of the Philippines - Los Baños'
+                                            }
                                         />
                                     </Grid>
                                     <Grid item xs={12} md={6}>
                                         <TextField
                                             label="Location"
-                                            helperText={'Ex: Los Baños. Laguna'}
                                             variant="standard"
                                             sx={{ width: '100%' }}
                                             {...register(
                                                 `education[${index}].location`
                                             )}
+                                            error={
+                                                !!errors?.education?.[index]
+                                                    ?.location
+                                            }
+                                            helperText={
+                                                errors?.education?.[index]
+                                                    ?.location?.message ||
+                                                'Ex: Los Baños. Laguna'
+                                            }
                                         />
                                     </Grid>
                                     <Grid item xs={12} md={6}>
                                         <TextField
                                             label="Starting Year"
-                                            helperText={'Ex: 2021'}
+                                            type="string"
                                             variant="standard"
                                             sx={{ width: '100%' }}
                                             {...register(
                                                 `education[${index}].startYear`
                                             )}
+                                            error={
+                                                !!errors?.education?.[index]
+                                                    ?.startYear
+                                            }
+                                            helperText={
+                                                errors?.education?.[index]
+                                                    ?.startYear?.message ||
+                                                'Ex: 2021'
+                                            }
                                         />
                                     </Grid>
                                     <Grid item xs={12} md={6}>
                                         <TextField
-                                            label="End Year"
-                                            helperText={'Ex: 2025'}
+                                            label="Graduation Year"
                                             variant="standard"
+                                            type="string"
                                             sx={{ width: '100%' }}
                                             {...register(
                                                 `education[${index}].endYear`
                                             )}
+                                            error={
+                                                !!errors?.education?.[index]
+                                                    ?.endYear
+                                            }
+                                            helperText={
+                                                errors?.education?.[index]
+                                                    ?.endYear?.message ||
+                                                'Ex: 2025'
+                                            }
                                         />
                                     </Grid>
                                     <EducationSubsection
                                         nestedIndex={index}
                                         {...{ control, register }}
                                         removeSchool={() => remove(index)}
+                                        errors={
+                                            errors?.education?.[index]
+                                                ?.subsection
+                                        }
                                     />
                                 </Grid>
                             </Box>
@@ -93,6 +141,9 @@ const EducationSection: FunctionComponent = () => {
                         </Fragment>
                     );
                 })}
+                <Typography variant="subtitle2" color="error">
+                    {errors?.education?.message}
+                </Typography>
                 <Button
                     variant="outlined"
                     sx={{ mr: 2, my: 2 }}

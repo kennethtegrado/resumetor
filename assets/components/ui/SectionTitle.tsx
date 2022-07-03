@@ -14,6 +14,7 @@ import { HiPencil } from 'react-icons/hi';
 const SectionTitle: FunctionComponent<SectionTitleProps> = ({
     title = 'Section Title',
     editableTitle,
+    type,
 }) => {
     // useForm
     const {
@@ -51,6 +52,13 @@ const SectionTitle: FunctionComponent<SectionTitleProps> = ({
         setShowTitle(true);
     };
 
+    // Helper Text
+    let helper: string | undefined = undefined;
+
+    if (type === 'education') helper = 'Ex: Education';
+    else if (type === 'experience') helper = 'Ex: Working Experience';
+    else if (type === 'skill') helper = 'Ex: Skills';
+
     return (
         <CardHeader
             action={
@@ -78,7 +86,8 @@ const SectionTitle: FunctionComponent<SectionTitleProps> = ({
                                 errors?.[title.split(' ').join('-')]?.message
                             }
                             helperText={
-                                errors?.[title.split(' ').join('-')]?.message
+                                errors?.[title.split(' ').join('-')]?.message ||
+                                helper
                             }
                             {...rest}
                             ref={(e) => {
@@ -99,4 +108,5 @@ export default SectionTitle;
 interface SectionTitleProps {
     title?: string;
     editableTitle?: boolean;
+    type?: 'education' | 'experience' | 'skill';
 }

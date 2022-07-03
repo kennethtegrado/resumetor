@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 // Component Import
 import Section from '@components/Section';
-import { ViewHeaderData } from '@components/ui';
+import { ViewHeaderData, SaveButton } from '@components/ui';
 
 // MUI Import
 import {
@@ -18,7 +18,7 @@ import {
 } from '@mui/material';
 
 // Icon Import
-import { TiBookmark, TiDelete } from 'react-icons/ti';
+import { TiDelete } from 'react-icons/ti';
 
 // React Hook Form
 import { useForm, useFieldArray } from 'react-hook-form';
@@ -181,14 +181,7 @@ const PersonalInfo: FunctionComponent = () => {
                     >
                         Add Link
                     </Button>
-                    <Button
-                        variant="contained"
-                        endIcon={<TiBookmark />}
-                        type="submit"
-                        sx={{ px: 5 }}
-                    >
-                        Save
-                    </Button>
+                    <SaveButton />
                 </form>
             )}
             {viewData && (

@@ -10,10 +10,15 @@ const Section: FunctionComponent<SectionProps> = ({
     title,
     editableTitle,
     children,
+    type,
 }) => {
     return (
         <Card sx={{ p: 5 }}>
-            <SectionTitle title={title} editableTitle={editableTitle} />
+            <SectionTitle
+                title={title}
+                editableTitle={editableTitle}
+                type={type}
+            />
             <CardContent>{children}</CardContent>
         </Card>
     );
@@ -25,4 +30,5 @@ interface SectionProps {
     title?: string;
     editableTitle?: boolean;
     children?: ReactNode;
+    type?: 'education' | 'experience' | 'skill';
 }

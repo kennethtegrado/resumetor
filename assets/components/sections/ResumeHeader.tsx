@@ -136,7 +136,7 @@ const PersonalInfo: FunctionComponent = () => {
                                 error={errors?.location ? true : false}
                                 helperText={
                                     errors?.location?.message ||
-                                    'Ex: San Francisco, California.'
+                                    'Ex: Metro Manila, Philippines.'
                                 }
                                 sx={{ width: '100%' }}
                                 variant={'standard'}

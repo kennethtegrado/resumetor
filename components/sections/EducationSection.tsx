@@ -23,13 +23,13 @@ import { useForm, useFieldArray } from 'react-hook-form';
 import type { SubmitHandler, FieldValues } from 'react-hook-form';
 
 // Resolver
-import { educationResolver } from '@schema';
+import { educationResolver } from 'schema';
 
 // Utils function
 import { sortArrayEducationData } from '@utils';
 
 // Interface Import
-import { SchoolSectionValues } from '@interface/reactHookForm';
+import { SchoolSectionValues } from 'interface/reactHookForm';
 
 const EducationSection: FunctionComponent = () => {
     // States

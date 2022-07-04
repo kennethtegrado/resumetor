@@ -108,5 +108,5 @@ export default SectionTitle;
 interface SectionTitleProps {
     title?: string;
     editableTitle?: boolean;
-    type?: 'education' | 'experience' | 'skill';
+    type?: 'education' | 'experience' | 'skill' | 'header';
 }

@@ -41,12 +41,12 @@ const makeArrayHeaderData = async (
             makeArrayItem.value = value;
             makeArrayResult.push(makeArrayItem);
         } else {
-            value.forEach(async (item: ResumeHeaderLink, index: number) => {
+            value.forEach(async (item: ResumeHeaderLink) => {
                 const makeArrayItem: PersonalFields = {
                     key: '',
                     value: { url: '', shorthand: '' },
                 };
-                makeArrayItem.key = `Link ${index + 1}`;
+                makeArrayItem.key = 'link';
                 const generateShortLinkObject = await shortenLink(item.link);
                 makeArrayItem.value = generateShortLinkObject;
                 makeArrayResult.push(makeArrayItem);

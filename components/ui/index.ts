@@ -5,6 +5,8 @@ import ViewHeaderData from './ViewHeaderData';
 import ViewEducationData from './ViewEducationData';
 import SaveButton from './SaveButton';
 import EditButton from './EditButton';
+import DataLists from './DataLists';
+import EducationItem from './EducationItem';
 
 export {
     SectionTitle,

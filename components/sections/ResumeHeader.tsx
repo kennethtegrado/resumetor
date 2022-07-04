@@ -25,7 +25,7 @@ import { useForm, useFieldArray } from 'react-hook-form';
 import type { SubmitHandler, FieldValues } from 'react-hook-form';
 
 // Resolver
-import { resumeHeaderResolver } from '@schema';
+import { resumeHeaderResolver } from 'schema';
 
 // Utils Import
 import { makeArrayHeaderData } from '@utils';

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.7.1](https://github.com/kennethtegrado/resumetor/compare/v0.7.0...v0.7.1) (2022-07-04)
+
+
+### Features
+
+* improve view of resume header ([916a84c](https://github.com/kennethtegrado/resumetor/commit/916a84cd92d7c01f5411569d931eade4437e35af)), closes [#16](https://github.com/kennethtegrado/resumetor/issues/16)
+
 ## [0.7.0](https://github.com/kennethtegrado/resumetor/compare/v0.6.1...v0.7.0) (2022-07-03)
 
 

@@ -1,48 +1,37 @@
-// Interface Import
 import type { FunctionComponent } from 'react';
-import type { PersonalFields } from '@interface/reactHookForm';
+import type { SchoolSectionValues } from '@interface/reactHookForm';
 
-// MUI Import
-import { Grid, Link, Typography } from '@mui/material';
+// MUI import
+import { Box, Stack, Typography } from '@mui/material';
 
-const EducationItem: FunctionComponent<EducationItemProps> = ({
-    textAlign = 'left',
-    item,
-}) => {
-    let content: string = '',
-        shorthand: string = '',
-        url: string = '';
-
-    if (typeof item.value === 'string') content = item.value;
-    else {
-        shorthand = item.value.shorthand;
-        url = item.value.url;
-    }
-
+const EducationItem: FunctionComponent<EducationItemProps> = ({ item }) => {
     return (
-        <Grid
-            item
-            xs={12}
-            md={
-                item.key === 'name' || item.key === 'job Position'
-                    ? undefined
-                    : 6
-            }
-        >
-            {item.key !== 'link' ? (
-                <Typography sx={{ textAlign }}>{content}</Typography>
-            ) : (
-                <Link href={url} sx={{ textTransform: 'lowercase' }}>
-                    {shorthand}
-                </Link>
-            )}
-        </Grid>
+        <Box sx={{ mb: 3 }}>
+            <Stack direction="row" sx={{ justifyContent: 'space-between' }}>
+                <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
+                    {item.school}
+                </Typography>
+                <Typography variant="body2">{item.location}</Typography>
+            </Stack>
+            <Stack direction="row" sx={{ justifyContent: 'space-between' }}>
+                <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
+                    {item.degree}
+                </Typography>
+                <Typography variant="body2">
+                    {item.startYear}-{item.endYear}
+                </Typography>
+            </Stack>
+            {item.subsection?.map((subsection, index) => (
+                <Typography key={index} variant="body2">
+                    {subsection.title}: {subsection.content}
+                </Typography>
+            ))}
+        </Box>
     );
 };
 
 export default EducationItem;
 
 export interface EducationItemProps {
-    textAlign?: 'left' | 'right' | 'auto';
-    item: PersonalFields;
+    item: SchoolSectionValues;
 }

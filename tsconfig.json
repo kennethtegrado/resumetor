@@ -24,7 +24,7 @@
             "@interface/*": ["./interface/*"],
             "@public/*": ["./public/*"],
             "@utils": ["./utils/index.ts"],
-            "@atom/*": ["./atoms/index.ts"],
+            "@atom": ["./atoms/index.ts"],
             "@hooks/*": ["./hooks/*"]
         }
     },

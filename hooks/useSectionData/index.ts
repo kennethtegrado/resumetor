@@ -5,12 +5,18 @@ import type {
     SchoolSectionValues,
 } from '@interface/reactHookForm';
 
-const useViewData = () => {
+const useSectionData = () => {
     const [sectionData, setSectionData] = useState<
         Array<PersonalFields | SchoolSectionValues>
     >([]);
 
-    return { sectionData, setSectionData };
+    const updateSectionData = (
+        data: Array<PersonalFields | SchoolSectionValues>
+    ) => {
+        setSectionData(data);
+    };
+
+    return { sectionData, updateSectionData };
 };
 
-export default useViewData;
+export default useSectionData;

@@ -24,7 +24,8 @@
             "@interface/*": ["./interface/*"],
             "@public/*": ["./public/*"],
             "@utils": ["./utils/index.ts"],
-            "@atom/*": ["./atoms/*"]
+            "@atom/*": ["./atoms/*"],
+            "@hooks/*": ["./hooks/*"]
         }
     },
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

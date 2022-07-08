@@ -19,18 +19,32 @@ const HeaderItem: FunctionComponent<HeaderItemProps> = ({
         url = item.value.url;
     }
 
+    const { key } = item;
+
     return (
         <Grid
             item
             xs={12}
-            md={
-                item.key === 'name' || item.key === 'job Position'
-                    ? undefined
-                    : 6
+            md={key === 'name' || key === 'job Position' ? 12 : 6}
+            sx={
+                key !== 'name' && key !== 'job Position'
+                    ? { textAlign }
+                    : undefined
             }
         >
-            {item.key !== 'link' ? (
-                <Typography sx={{ textAlign }}>{content}</Typography>
+            {key === 'name' ? (
+                <Typography
+                    variant="h4"
+                    sx={{ display: 'block', fontWeight: 600 }}
+                >
+                    {content}
+                </Typography>
+            ) : key === 'job Position' ? (
+                <Typography variant="h5" sx={{ display: 'block' }}>
+                    {content}
+                </Typography>
+            ) : key !== 'link' ? (
+                <Typography>{content}</Typography>
             ) : (
                 <Link href={url} sx={{ textTransform: 'lowercase' }}>
                     {shorthand}

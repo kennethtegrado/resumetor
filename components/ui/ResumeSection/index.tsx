@@ -1,12 +1,9 @@
 // Interface Import
 import type { FunctionComponent, ReactNode } from 'react';
-import type {
-    PersonalFields,
-    SchoolSectionValues,
-} from '@interface/reactHookForm';
+import { SectionTypes } from '@interface/sections';
 
 // MUI IMPORT
-import { Card, CardContent, Button } from '@mui/material';
+import { Card, Button, Divider } from '@mui/material';
 
 // Component Import
 import { SectionTitle } from '@components/ui';
@@ -19,14 +16,6 @@ const ResumeSection: FunctionComponent<SectionProps> = ({
     type = 'header',
     remove,
 }) => {
-    const [FormComponent]: [
-        FunctionComponent<{
-            showData: () => void;
-            updateSectionData: (
-                data: Array<PersonalFields | SchoolSectionValues>
-            ) => void;
-        }>
-    ] = children;
     return (
         <>
             {remove && (
@@ -40,7 +29,10 @@ const ResumeSection: FunctionComponent<SectionProps> = ({
                     editableTitle={editableTitle}
                     type={type}
                 />
-                <ResumeSectionContent form={FormComponent} type={type} />
+                <Divider variant="middle" />
+                <ResumeSectionContent type={type}>
+                    {children}
+                </ResumeSectionContent>
             </Card>
         </>
     );
@@ -52,6 +44,6 @@ interface SectionProps {
     title?: string;
     editableTitle?: boolean;
     children: ReactNode;
-    type?: 'education' | 'experience' | 'skill' | 'header';
+    type?: SectionTypes;
     remove?: () => void;
 }

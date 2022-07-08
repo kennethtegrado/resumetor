@@ -4,8 +4,7 @@ import type {
     PersonalFields,
     SchoolSectionValues,
 } from '@interface/reactHookForm';
-import type { HeaderItemProps } from '../HeaderItem';
-import type { EducationItemProps } from '../EducationItem';
+import { SectionTypes } from '@interface/sections';
 
 import { Fragment } from 'react';
 
@@ -14,25 +13,31 @@ import { Grid } from '@mui/material';
 
 // Component Import
 import EditButton from '../EditButton';
-
 import EducationItem from '../EducationItem';
 import HeaderItem from '../HeaderItem';
 
-const DataLists: FunctionComponent<DataListsProps> = ({
-    data: DATA,
-    hideData,
-    type = 'header',
-}) => {
-    if (!DATA.length) return null;
+// Atom Import
+import { sectionContentState, viewSectionContentState } from '@atom';
+import { useRecoilState, useRecoilValue } from 'recoil';
+
+const DataLists: FunctionComponent<DataListsProps> = ({ type = 'header' }) => {
+    const DATA = useRecoilValue(sectionContentState);
+    const [viewContent, setViewContent] = useRecoilState(
+        viewSectionContentState
+    );
+
+    if (!DATA.length || !viewContent) return null;
+
+    const hideContent = () => setViewContent(false);
 
     return (
         <>
-            <Grid container spacing={2} sx={{ my: 2 }}>
+            <Grid container spacing={2}>
                 {DATA.map((item, index) => (
                     <Fragment key={index}>
                         {type === 'header' ? (
                             <HeaderItem
-                                textAlign={index % 2 === 0 ? 'right' : 'left'}
+                                textAlign={index % 2 !== 0 ? 'right' : 'left'}
                                 item={item as PersonalFields}
                             />
                         ) : (
@@ -41,7 +46,7 @@ const DataLists: FunctionComponent<DataListsProps> = ({
                     </Fragment>
                 ))}
             </Grid>
-            <EditButton edit={hideData}></EditButton>
+            <EditButton edit={hideContent}></EditButton>
             <></>
         </>
     );
@@ -50,7 +55,5 @@ const DataLists: FunctionComponent<DataListsProps> = ({
 export default DataLists;
 
 export interface DataListsProps {
-    data: Array<SchoolSectionValues | PersonalFields>;
-    type: 'education' | 'experience' | 'skill' | 'header';
-    hideData: () => void;
+    type: SectionTypes;
 }

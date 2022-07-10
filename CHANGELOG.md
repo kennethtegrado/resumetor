@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.7.3](https://github.com/kennethtegrado/resumetor/compare/v0.7.2...v0.7.3) (2022-07-10)
+
+
+### Bug Fixes
+
+* change implementation of EducationForm ([33bc1ab](https://github.com/kennethtegrado/resumetor/commit/33bc1ab0f175ae492b22df5e0db7d61ac73d806e))
+
 ### [0.7.2](https://github.com/kennethtegrado/resumetor/compare/v0.7.1...v0.7.2) (2022-07-08)
 
 

@@ -3,7 +3,7 @@ import type { FunctionComponent } from 'react';
 import { Fragment } from 'react';
 
 // MUI Import
-import { Box, Button, ButtonGroup } from '@mui/material';
+import { Box, Button, ButtonGroup, Grid } from '@mui/material';
 
 // Component Import
 import EducationSection from './EducationSection';
@@ -17,28 +17,30 @@ const ResumeSections: FunctionComponent = () => {
         control,
         name: 'sections',
     });
+    const {
+        append: appendEducation,
+        fields: fieldsEducation,
+        remove: removeEducation,
+    } = useFieldArray({
+        control,
+        name: 'education',
+    });
 
     const addEducation = (): void => {
-        append({ education: true });
+        appendEducation({ education: true });
     };
 
     return (
         <>
-            {fields.map((item: any, index) => (
-                <Fragment key={item.id}>
-                    <Box sx={{ my: 4 }}>
-                        <Button
-                            variant="outlined"
-                            sx={{ px: 2 }}
-                            onClick={() => remove(index)}
-                        >
-                            Remove Section
-                        </Button>
-                        {item.education && <EducationSection />}
-                    </Box>
-                </Fragment>
-            ))}
-
+            <Grid container spacing={4} sx={{ mt: 2 }}>
+                {fieldsEducation.map((item, index) => (
+                    <Grid key={item.id} xs={12} item>
+                        <EducationSection
+                            remove={() => removeEducation(index)}
+                        />
+                    </Grid>
+                ))}
+            </Grid>
             <Box sx={{ my: 5 }}>
                 <ButtonGroup
                     variant="outlined"

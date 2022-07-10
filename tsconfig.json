@@ -16,15 +16,23 @@
         "incremental": true,
         "baseUrl": ".",
         "paths": {
-            "@components/*": ["./assets/components/*"],
-            "@styles/*": ["./assets/styles/*"],
-            "@material/*": ["./assets/mui/*"],
-            "@schema": ["./assets/schema/index.ts"],
-            "@interface/*": ["./assets/interface/*"],
+            "@components/*": ["./components/*"],
+            "@config/*": ["./config/*"],
+            "@styles/*": ["./styles/*"],
+            "@material/*": ["config/theme/*"],
+            "@schema": ["./schema/index.ts"],
+            "@interface/*": ["./interface/*"],
             "@public/*": ["./public/*"],
-            "@utils": ["./utils/index.ts"]
+            "@utils": ["./utils/index.ts"],
+            "@atom": ["./atoms/index.ts"],
+            "@hooks/*": ["./hooks/*"]
         }
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+    "include": [
+        "next-env.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        "components/ui/HeaderForm"
+    ],
     "exclude": ["node_modules"]
 }

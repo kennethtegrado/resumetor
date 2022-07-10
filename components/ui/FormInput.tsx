@@ -1,4 +1,4 @@
-import type { FunctionComponent, PropsWithoutRef } from 'react';
+import type { FunctionComponent } from 'react';
 
 // React Hook Form
 import { useFormContext } from 'react-hook-form';

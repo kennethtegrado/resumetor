@@ -67,3 +67,13 @@
         }
     }
 }
+
+.education {
+    &__form- {
+        width: 100%;
+        padding: 1rem;
+    }
+    &__form-hidden {
+        display: none;
+    }
+}

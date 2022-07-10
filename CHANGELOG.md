@@ -2,6 +2,40 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.7.3](https://github.com/kennethtegrado/resumetor/compare/v0.7.2...v0.7.3) (2022-07-10)
+
+
+### Bug Fixes
+
+* change implementation of EducationForm ([33bc1ab](https://github.com/kennethtegrado/resumetor/commit/33bc1ab0f175ae492b22df5e0db7d61ac73d806e))
+
+### [0.7.2](https://github.com/kennethtegrado/resumetor/compare/v0.7.1...v0.7.2) (2022-07-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* **directory:** new directory structure where previous import's changed
+
+### Features
+
+* add new section declaration types ([cdea10a](https://github.com/kennethtegrado/resumetor/commit/cdea10a49c6645bdbbac0f2454bd48d9cc6d78b6))
+* add viewSectionContent atom ([ffefcff](https://github.com/kennethtegrado/resumetor/commit/ffefcff0fa2a7f5c996b28c8b03f5f35e027f4ae))
+* **HOC:** add withSubmitFormHandler HOC ([dc13730](https://github.com/kennethtegrado/resumetor/commit/dc13730dfe9ed14297a95544a5a6643ce64fe83f))
+* **hooks:** add custom useSectionData and useViewData hooks ([1a0efb0](https://github.com/kennethtegrado/resumetor/commit/1a0efb04eb5ec0e86444525c00de491d8ab63e1a))
+* improve resume header view ([4e57cff](https://github.com/kennethtegrado/resumetor/commit/4e57cffd0856a277bdae3c67592aab253f533481)), closes [#16](https://github.com/kennethtegrado/resumetor/issues/16)
+* **recoil:** add sectionContentState atom to hold section data ([ad75d21](https://github.com/kennethtegrado/resumetor/commit/ad75d21bb5cd4b48d34527a92dd01dedca494147))
+* **types:** add type declaration for section types ([6aa44cd](https://github.com/kennethtegrado/resumetor/commit/6aa44cd8fb0502700e906cf24e2f2f4985ec0d1e))
+
+
+* **directory:** change directory structure ([fb46904](https://github.com/kennethtegrado/resumetor/commit/fb46904b8bf619a47e1ff6560344ca2e1cd1a985))
+
+### [0.7.1](https://github.com/kennethtegrado/resumetor/compare/v0.7.0...v0.7.1) (2022-07-04)
+
+
+### Features
+
+* improve view of resume header ([916a84c](https://github.com/kennethtegrado/resumetor/commit/916a84cd92d7c01f5411569d931eade4437e35af)), closes [#16](https://github.com/kennethtegrado/resumetor/issues/16)
+
 ## [0.7.0](https://github.com/kennethtegrado/resumetor/compare/v0.6.1...v0.7.0) (2022-07-03)
 
 

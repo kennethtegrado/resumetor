@@ -6,9 +6,8 @@ import type { Control, FieldValues, UseFormRegister } from 'react-hook-form';
 
 // MUI Import
 import { Grid, TextField, Chip, Button } from '@mui/material';
-import { string } from 'yup';
 
-const EducationSubsection: FunctionComponent<EducationSubsectionProps> = ({
+const EducationFormSubsection: FunctionComponent<EducationSubsectionProps> = ({
     control,
     nestedIndex,
     register,
@@ -77,7 +76,7 @@ const EducationSubsection: FunctionComponent<EducationSubsectionProps> = ({
     );
 };
 
-export default EducationSubsection;
+export default EducationFormSubsection;
 
 interface EducationSubsectionProps {
     nestedIndex: number;

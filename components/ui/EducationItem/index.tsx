@@ -2,11 +2,11 @@ import type { FunctionComponent } from 'react';
 import type { SchoolSectionValues } from '@interface/reactHookForm';
 
 // MUI import
-import { Box, Stack, Typography } from '@mui/material';
+import { Stack, Typography, Grid } from '@mui/material';
 
 const EducationItem: FunctionComponent<EducationItemProps> = ({ item }) => {
     return (
-        <Box sx={{ mb: 3 }}>
+        <Grid item xs={12}>
             <Stack direction="row" sx={{ justifyContent: 'space-between' }}>
                 <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
                     {item.school}
@@ -26,7 +26,7 @@ const EducationItem: FunctionComponent<EducationItemProps> = ({ item }) => {
                     {subsection.title}: {subsection.content}
                 </Typography>
             ))}
-        </Box>
+        </Grid>
     );
 };
 

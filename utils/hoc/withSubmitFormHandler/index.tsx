@@ -1,6 +1,6 @@
 // Interface
 import type { FunctionComponent } from 'react';
-import type { FormComponent, SectionTypes } from '@interface/sections';
+import type { FormComponent, SectionTypes, sortKey } from '@interface/sections';
 import type {
     PersonalFields,
     SchoolSectionValues,
@@ -13,6 +13,7 @@ import { useSetRecoilState, useRecoilState } from 'recoil';
 
 // Utils Function
 import makeArrayHeaderData from 'utils/makeArrayHeaderData';
+import sortArrayData from 'utils/sortArrayData';
 
 const SubmitFormHandler = (
     FormComponent: FormComponent,
@@ -23,15 +24,25 @@ const SubmitFormHandler = (
         const [viewSectionSectionState, setViewSectionContentState] =
             useRecoilState(viewSectionContentState);
 
+        let sortKey: sortKey = 'startYear';
+
         const submitHandler: SubmitHandler<FieldValues> = async (data) => {
-            if (type === 'header')
-                setSectionContentState(await makeArrayHeaderData(data));
-            else
-                setSectionContentState(
-                    data as Array<PersonalFields | SchoolSectionValues>
-                );
+            let processedData: Array<PersonalFields | SchoolSectionValues> = [];
+            switch (type) {
+                case 'header':
+                    processedData = await makeArrayHeaderData(data);
+                    break;
+                case 'education':
+                    processedData = await sortArrayData(
+                        data.education,
+                        sortKey
+                    );
+                    break;
+            }
+            setSectionContentState(processedData);
             setViewSectionContentState(true);
         };
+
         return (
             <FormComponent
                 submitHandler={submitHandler}

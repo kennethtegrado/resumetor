@@ -1,13 +1,8 @@
 import makeArrayHeaderData from './makeArrayHeaderData';
 import shortenLink from './shortenLink';
-import sortArrayEducationData from './sortEducationData';
+import sortArrayData from './sortArrayData';
 
 // HOCS
 import withSubmitHandler from './hoc/withSubmitFormHandler';
 
-export {
-    makeArrayHeaderData,
-    shortenLink,
-    sortArrayEducationData,
-    withSubmitHandler,
-};
+export { makeArrayHeaderData, shortenLink, sortArrayData, withSubmitHandler };

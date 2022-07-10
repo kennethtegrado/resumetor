@@ -7,6 +7,8 @@ import EditButton from './EditButton';
 import DataLists from './DataLists';
 import HeaderItem from './HeaderItem';
 import HeaderForm from './HeaderForm';
+import EducationForm from './EducationForm';
+import EducationFormSubsection from './EducationFormSubsection';
 import EducationItem from './EducationItem';
 import ResumeSection from './ResumeSection';
 
@@ -22,4 +24,6 @@ export {
     EducationItem,
     DataLists,
     HeaderForm,
+    EducationForm,
+    EducationFormSubsection,
 };

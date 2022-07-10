@@ -32,7 +32,7 @@ const DataLists: FunctionComponent<DataListsProps> = ({ type = 'header' }) => {
 
     return (
         <>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} sx={{ mb: 3 }}>
                 {DATA.map((item, index) => (
                     <Fragment key={index}>
                         {type === 'header' ? (
